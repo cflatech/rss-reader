@@ -34,3 +34,17 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+## Directory
+- components: 共有コンポーネント
+- features: 各機能管理
+    - (hoge)
+        - components: 機能に関連するコンポーネント
+        - hooks
+        - store: 各機能に関連するデータ取得処理
+        - types
+- libs
+    - 外部ライブラリの宣言
+- prisma
+    - prismaのschema宣言    
