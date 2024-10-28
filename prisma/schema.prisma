@@ -35,7 +35,6 @@ model Bookmark {
 
 model Site {
   id        String   @id @default(cuid())
-  title     String
   url       String   @unique
   createdAt DateTime @default(now())
   Feed      Feed[]

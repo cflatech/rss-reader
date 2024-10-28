@@ -1,20 +1,36 @@
-import { fetchFeeds, getSites } from "~/features/feed/store/rssStore";
+import { ListItem } from "~/components/ListItem/listItem";
+import {
+	feedItem,
+	feedList,
+	feeds,
+	headerAccent,
+	title,
+	ul,
+} from "~/features/feed/components/featureList.css";
+import { fetchRss, getSites } from "~/features/feed/store/rssStore";
 
 const Feeds = async ({ url }: { url: string }): Promise<JSX.Element> => {
-	const feeds = await fetchFeeds(url);
+	const rss = await fetchRss(url);
 
 	return (
-		<ul>
-			{feeds.map((feed) => {
-				return (
-					<li key={feed.title}>
-						<a href={feed.url} target="_blank" rel="noreferrer">
-							{feed.title}
-						</a>
-					</li>
-				);
-			})}
-		</ul>
+		<ListItem>
+			<h2 className={title}>
+				<div className={headerAccent} />
+				<a href={rss.url}>{rss.title.trim()}</a>
+			</h2>
+			<ul className={ul}>
+				{rss.feeds.map((feed) => {
+					return (
+						<li className={feedItem} key={feed.title}>
+							<a href={feed.url} target="_blank" rel="noreferrer">
+								{feed.title}
+							</a>
+							{/* TODO: bookmarkButton */}
+						</li>
+					);
+				})}
+			</ul>
+		</ListItem>
 	);
 };
 
@@ -22,11 +38,10 @@ export const FeedList = async (): Promise<JSX.Element> => {
 	const sites = await getSites();
 
 	return (
-		<div>
+		<div className={feedList}>
 			{sites.map((site) => {
 				return (
 					<div key={site.id}>
-						<h2>{site.title}</h2>
 						<Feeds url={site.url} />
 					</div>
 				);
