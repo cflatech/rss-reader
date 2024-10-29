@@ -1,4 +1,4 @@
-import { listItem } from "~/components/ListItem/listItem.css";
+import { listItem } from "~/components/List/listItem.css";
 
 type Props = {
 	children: React.ReactNode;

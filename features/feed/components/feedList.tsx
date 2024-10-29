@@ -1,4 +1,4 @@
-import { ListItem } from "~/components/ListItem/listItem";
+import { ListItem } from "~/components/List/listItem";
 import {
 	feedItem,
 	feedList,
