@@ -12,10 +12,10 @@
   "dependencies": {
     "@prisma/client": "5.21.1",
     "@vanilla-extract/css": "^1.16.0",
-    "next": "14.2.15",
+    "next": "15.0.1",
     "prisma": "^5.21.1",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "19.0.0-rc-02c0e824-20241028",
+    "react-dom": "19.0.0-rc-02c0e824-20241028",
     "rss-parser": "^3.13.0"
   },
   "devDependencies": {
