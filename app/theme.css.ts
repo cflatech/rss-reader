@@ -10,5 +10,6 @@ export const [theme, vars] = createTheme({
 		main: "#b0c4de",
 		base: "#708090",
 		accent: "#00B5AD",
+		text: "black",
 	},
 });

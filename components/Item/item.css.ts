@@ -10,6 +10,8 @@ export const item = style({
 
 export const title = style({
 	fontSize: "2rem",
+	marginTop: vars.space.medium,
+	marginBottom: vars.space.medium,
 });
 
 export const headerAccent = style({

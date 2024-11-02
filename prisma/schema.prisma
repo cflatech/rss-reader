@@ -14,23 +14,13 @@ datasource db {
 }
 
 model Feed {
-  id          String     @id @default(cuid())
+  id          String   @id @default(cuid())
   description String
   title       String
   link        String
-  createdAt   DateTime   @default(now())
-  updatedAt   DateTime   @updatedAt
-  Bookmark    Bookmark[]
-  site        Site       @relation(fields: [siteId], references: [id])
+  createdAt   DateTime @default(now())
+  site        Site     @relation(fields: [siteId], references: [id])
   siteId      String
-}
-
-model Bookmark {
-  id        String   @id @default(cuid())
-  rssId     String
-  rss       Feed     @relation(fields: [rssId], references: [id])
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
 }
 
 model Site {
