@@ -1,14 +1,17 @@
-import Head from "next/head";
+import type { Metadata } from "next";
+import { Header } from "~/components/Header/header";
 import { FeedList } from "~/features/feed/components/feedList";
+
+export const metadata: Metadata = {
+	title: "RSS Reader",
+	description: "cflatech RSS Reader",
+};
 
 export default function Home() {
 	return (
 		<div>
-			<Head>
-				<title>RSS Reader</title>
-				<meta name="description" content="cflatech RSS Reader" />
-			</Head>
 			<main>
+				<Header title="RSS Reader" />
 				<FeedList />
 			</main>
 			<footer />

@@ -11,7 +11,5 @@ export const button = style({
 		color: vars.color.accent,
 	},
 	color: vars.color.accent,
-	zIndex: 1,
-	// クリック時のエフェクトを無効化
 	userSelect: "none",
 });

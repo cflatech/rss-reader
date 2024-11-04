@@ -12,4 +12,9 @@ export const [theme, vars] = createTheme({
 		accent: "#00B5AD",
 		text: "black",
 	},
+	layer: {
+		base: "0",
+		menu: "10",
+		modal: "100",
+	},
 });

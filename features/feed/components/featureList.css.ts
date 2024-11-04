@@ -5,6 +5,10 @@ export const feedList = style({
 	margin: vars.space.large,
 });
 
+export const siteList = style({
+	marginBottom: vars.space.large,
+});
+
 export const ul = style({
 	listStyleType: "none",
 	paddingInlineStart: 0,

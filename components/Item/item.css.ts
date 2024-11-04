@@ -5,7 +5,6 @@ export const item = style({
 	padding: vars.space.large,
 	backgroundColor: "white",
 	borderRadius: vars.space.medium,
-	margin: vars.space.medium,
 });
 
 export const title = style({

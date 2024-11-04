@@ -6,6 +6,7 @@ import {
 	cardElement,
 	feedList,
 	ul,
+	siteList,
 } from "~/features/feed/components/featureList.css";
 import { fetchRss, getSites } from "~/features/feed/store/query/rssQueryStore";
 
@@ -63,7 +64,7 @@ export const FeedList = async (): Promise<JSX.Element> => {
 		<div className={feedList}>
 			{sites.map((site) => {
 				return (
-					<div key={site.id}>
+					<div key={site.id} className={siteList}>
 						<Feeds url={site.url} siteId={site.id} />
 					</div>
 				);
