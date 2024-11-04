@@ -53,6 +53,7 @@ export const sideMenu = style({
 	"::-webkit-scrollbar": {
 		display: "none",
 	},
+	padding: vars.space.large,
 	fontSize: "1.5rem",
 	pointerEvents: "auto",
 	transform: "translateX(0%)",
