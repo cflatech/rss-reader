@@ -11,6 +11,10 @@ export const header = style({
 	zIndex: vars.layer.menu,
 });
 
+export const button = style({
+	cursor: "pointer",
+});
+
 export const h1 = style({
 	marginRight: vars.space.large,
 	marginLeft: vars.space.large,

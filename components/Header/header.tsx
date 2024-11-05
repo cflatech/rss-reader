@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { FaBars, FaXmark } from "react-icons/fa6";
 import {
 	bodyOverflowHidden,
+	button,
 	h1,
 	header,
 	menu,
@@ -37,7 +38,11 @@ export const Header = ({ title }: HeaderProps): JSX.Element => {
 	return (
 		<>
 			<header className={header}>
-				<button type="button" onClick={() => setIsOpen(!isOpen)}>
+				<button
+					className={button}
+					type="button"
+					onClick={() => setIsOpen(!isOpen)}
+				>
 					{!isOpen ? <FaBars size={"2rem"} /> : <FaXmark size={"2rem"} />}
 				</button>
 				<h1 className={h1}>{title}</h1>
