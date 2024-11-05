@@ -67,4 +67,6 @@ export const sideMenuHidden = style({
 export const bodyOverflowHidden = style({
 	overflowY: "scroll",
 	position: "fixed",
+	width: "100%",
+	height: "100%",
 });
