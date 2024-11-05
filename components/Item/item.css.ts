@@ -8,17 +8,17 @@ export const item = style({
 });
 
 export const title = style({
-	fontSize: "2rem",
+	fontSize: vars.fontSize.large,
 	marginTop: vars.space.medium,
 	marginBottom: vars.space.medium,
 });
 
 export const headerAccent = style({
 	width: 16,
-	height: 32,
+	height: vars.fontSize.large,
 	backgroundColor: "rgb(0, 181, 173)",
 	display: "inline-block",
 	marginRight: vars.space.medium,
-	verticalAlign: -6,
+	verticalAlign: -4,
 	whiteSpace: "nowrap",
 });

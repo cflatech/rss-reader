@@ -41,6 +41,8 @@ export const menuBackgroundVisible = style({
 });
 
 export const sideMenu = style({
+	marginTop: 0,
+	marginBottom: 0,
 	top: 0,
 	position: "absolute",
 	height: "100%",
@@ -58,6 +60,15 @@ export const sideMenu = style({
 	pointerEvents: "auto",
 	transform: "translateX(0%)",
 	transition: "transform 0.1s ease-in-out",
+});
+
+export const sideMenuItem = style({
+	padding: vars.space.large,
+});
+
+export const sideMenuLink = style({
+	color: vars.color.text,
+	textDecoration: "none",
 });
 
 export const sideMenuHidden = style({

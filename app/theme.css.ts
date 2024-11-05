@@ -17,4 +17,9 @@ export const [theme, vars] = createTheme({
 		menu: "10",
 		modal: "100",
 	},
+	fontSize: {
+		small: "0.75rem",
+		medium: "16px",
+		large: "1.5rem",
+	},
 });

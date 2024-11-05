@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaBars, FaXmark } from "react-icons/fa6";
 import {
@@ -10,6 +11,8 @@ import {
 	menuBackgroundVisible,
 	sideMenu,
 	sideMenuHidden,
+	sideMenuItem,
+	sideMenuLink,
 } from "~/components/Header/header.css";
 
 type HeaderProps = {
@@ -43,9 +46,23 @@ export const Header = ({ title }: HeaderProps): JSX.Element => {
 				<div
 					className={`${menuBackground} ${isOpen ? menuBackgroundVisible : ""}`}
 				/>
-				<div className={`${sideMenu} ${!isOpen ? sideMenuHidden : ""}`}>
-					hoge
-				</div>
+				<ul className={`${sideMenu} ${!isOpen ? sideMenuHidden : ""}`}>
+					<li className={sideMenuItem}>
+						<Link className={sideMenuLink} href="/">
+							Home
+						</Link>
+					</li>
+					<li className={sideMenuItem}>
+						<Link className={sideMenuLink} href="/bookmarks">
+							BookMark
+						</Link>
+					</li>
+					<li className={sideMenuItem}>
+						<Link className={sideMenuLink} href="/settings">
+							Settings
+						</Link>
+					</li>
+				</ul>
 			</div>
 		</>
 	);
