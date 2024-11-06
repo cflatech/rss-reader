@@ -7,14 +7,8 @@ import {
 	button,
 	h1,
 	header,
-	menu,
-	menuBackground,
-	menuBackgroundVisible,
-	sideMenu,
-	sideMenuHidden,
-	sideMenuItem,
-	sideMenuLink,
 } from "~/components/Header/header.css";
+import { SideMenu } from "~/components/Header/SideMenu/sideMenu";
 
 type HeaderProps = {
 	readonly title: string;
@@ -47,28 +41,7 @@ export const Header = ({ title }: HeaderProps): JSX.Element => {
 				</button>
 				<h1 className={h1}>{title}</h1>
 			</header>
-			<div className={menu}>
-				<div
-					className={`${menuBackground} ${isOpen ? menuBackgroundVisible : ""}`}
-				/>
-				<ul className={`${sideMenu} ${!isOpen ? sideMenuHidden : ""}`}>
-					<li className={sideMenuItem}>
-						<Link className={sideMenuLink} href="/">
-							Home
-						</Link>
-					</li>
-					<li className={sideMenuItem}>
-						<Link className={sideMenuLink} href="/bookmarks">
-							BookMark
-						</Link>
-					</li>
-					<li className={sideMenuItem}>
-						<Link className={sideMenuLink} href="/settings">
-							Settings
-						</Link>
-					</li>
-				</ul>
-			</div>
+			<SideMenu isOpen={isOpen} />
 		</>
 	);
 };
