@@ -1,6 +1,8 @@
+import { Suspense } from "react";
 import { Card } from "~/components/Card/card";
 import { Item } from "~/components/Item/item";
 import { BookmarkButton } from "~/features/feed/components/bookmarkButton";
+import { BookmarkButtonAction } from "~/features/feed/components/bookmarkButtonAction";
 import {
 	link,
 	cardElement,

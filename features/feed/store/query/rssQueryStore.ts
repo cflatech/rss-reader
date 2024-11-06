@@ -1,5 +1,4 @@
 "use server";
-import type { Site } from "@prisma/client";
 import { prisma } from "~/libs/prisma";
 import { parser } from "~/libs/rssParser";
 
@@ -24,7 +23,7 @@ export const fetchRss = async (url: string): Promise<Rss> => {
 	};
 };
 
-export const getSites = async (): Promise<Omit<Site, "createdAt">[]> => {
+export const getSites = async (): Promise<Site[]> => {
 	const sites = await prisma.site.findMany();
 	// const sites = [
 	// 	{

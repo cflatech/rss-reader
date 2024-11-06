@@ -16,3 +16,8 @@ type Bookmark = {
 	url: string;
 	summary: string;
 };
+
+type Site = {
+	id: string;
+	url: string;
+};

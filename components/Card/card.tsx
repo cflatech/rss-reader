@@ -1,5 +1,4 @@
 import { card } from "~/components/Card/card.css";
-import { StarButton } from "~/components/Card/starButton";
 
 type CardProps = { children: React.ReactNode };
 
@@ -13,4 +12,3 @@ const Body = ({ children }: BodyProps) => {
 };
 
 Card.Body = Body;
-Card.StarButton = StarButton;
