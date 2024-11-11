@@ -1,5 +1,5 @@
 "use client";
-import { startTransition, useActionState, useState } from "react";
+import { useActionState } from "react";
 import { button } from "~/features/feed/components/bookmarkButtonAction.css";
 import {
 	removeBookmarkFeed,
@@ -45,21 +45,11 @@ export const BookmarkButtonAction = ({
 		initialBookmarkId,
 	);
 
-	const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-		event.preventDefault();
-		startTransition(() => {
-			changeBookmark();
-		});
-	};
-
 	return (
-		<button
-			type="button"
-			className={button}
-			onClick={handleClick}
-			disabled={isPending}
-		>
-			{isPending ? "☆" : bookmarkId ? "★" : "☆"}
-		</button>
+		<form action={changeBookmark}>
+			<button type="submit" className={button} disabled={isPending}>
+				{isPending ? "☆" : bookmarkId ? "★" : "☆"}
+			</button>
+		</form>
 	);
 };

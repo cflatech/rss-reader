@@ -30,26 +30,26 @@ const Feeds = async ({
 					{rss.feeds.map((feed) => {
 						return (
 							<li key={feed.title}>
-								<a
-									className={link}
-									href={feed.url}
-									target="_blank"
-									rel="noreferrer"
-								>
-									<Card>
-										<div className={cardElement}>
+								<Card>
+									<div className={cardElement}>
+										<a
+											className={link}
+											href={feed.url}
+											target="_blank"
+											rel="noreferrer"
+										>
 											<div>
 												<Card.Body>{feed.title}</Card.Body>
 											</div>
-											<BookmarkButton
-												title={feed.title}
-												description={feed.summary}
-												link={feed.url}
-												siteId={siteId}
-											/>
-										</div>
-									</Card>
-								</a>
+										</a>
+										<BookmarkButton
+											title={feed.title}
+											description={feed.summary}
+											link={feed.url}
+											siteId={siteId}
+										/>
+									</div>
+								</Card>
 							</li>
 						);
 					})}

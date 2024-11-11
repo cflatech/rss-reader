@@ -21,6 +21,8 @@ model Feed {
   createdAt   DateTime @default(now())
   site        Site     @relation(fields: [siteId], references: [id])
   siteId      String
+
+  @@unique([siteId, link])
 }
 
 model Site {

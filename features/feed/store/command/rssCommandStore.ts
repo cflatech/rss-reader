@@ -36,17 +36,49 @@ export const saveBookmarkFeed = async ({
 	}
 };
 
-type removeBookmarkProps = {
+type removeBookmarkProps =
+	| removeBookmarkWithIdProps
+	| removeBookmarkWithSiteProps;
+
+type removeBookmarkWithIdProps = {
 	id: string;
 };
+type removeBookmarkWithSiteProps = {
+	siteId: string;
+	link: string;
+};
 
-export const removeBookmarkFeed = async ({
-	id,
-}: removeBookmarkProps): Promise<boolean> => {
+const hasId = (
+	props: removeBookmarkProps,
+): props is removeBookmarkWithIdProps => "id" in props;
+
+export const removeBookmarkFeed = async (
+	props: removeBookmarkProps,
+): Promise<boolean> => {
+	if (hasId(props)) {
+		try {
+			await prisma.feed.delete({
+				where: {
+					id: props.id,
+				},
+			});
+
+			return true;
+		} catch (e) {
+			console.error(e);
+			return false;
+		}
+	} else {
+	}
+
+	const { siteId, link } = props;
 	try {
 		await prisma.feed.delete({
 			where: {
-				id,
+				siteId_link: {
+					siteId,
+					link,
+				},
 			},
 		});
 
