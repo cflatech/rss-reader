@@ -4,18 +4,18 @@ import { BookmarkButtonAction } from "~/features/feed/components/bookmarkButtonA
 import { SiteList } from "~/features/feed/components/siteList";
 
 export const metadata: Metadata = {
-	title: "RSS Reader Settings",
-	description: "cflatech RSS Reader Settings",
+  title: "RSS Reader Settings",
+  description: "cflatech RSS Reader Settings",
 };
 
 export default function Home() {
-	return (
-		<div>
-			<main>
-				<Header title="RSS Reader" />
-				<SiteList />
-			</main>
-			<footer />
-		</div>
-	);
+  return (
+    <div>
+      <main>
+        <Header title="RSS Reader" />
+        <SiteList />
+      </main>
+      <footer />
+    </div>
+  );
 }

@@ -4,13 +4,13 @@ import { body } from "~/app/layout.css";
 import { Header } from "~/components/Header/header";
 
 export default function RootLayout({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-	return (
-		<html lang="ja" className={theme}>
-			<body className={body}>{children}</body>
-		</html>
-	);
+  return (
+    <html lang="ja" className={theme}>
+      <body className={body}>{children}</body>
+    </html>
+  );
 }

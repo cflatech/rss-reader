@@ -1,21 +1,38 @@
 import { Item } from "~/components/Item/item";
-import { siteList } from "~/features/feed/components/siteList.css";
+import {
+  input,
+  item,
+  list,
+  siteList,
+} from "~/features/feed/components/siteList.css";
 import { getSites } from "~/features/feed/store/query/rssQueryStore";
 
 export const SiteList = async (): Promise<JSX.Element> => {
-	const sites = await getSites();
+  const sites = await getSites();
 
-	return (
-		<div className={siteList}>
-			<Item>
-				<Item.Body>
-					<ul>
-						{sites.map((site) => {
-							return <li key={site.id}>{site.url}</li>;
-						})}
-					</ul>
-				</Item.Body>
-			</Item>
-		</div>
-	);
+  // todo: validation
+  // todo: save
+
+  return (
+    <div className={siteList}>
+      <Item>
+        <Item.Title>RSSサイト一覧</Item.Title>
+        <Item.Body>
+          <ul className={list}>
+            {sites.map((site) => {
+              return (
+                <li className={item} key={site.id}>
+                  <input
+                    className={input}
+                    type="text"
+                    defaultValue={site.url}
+                  />
+                </li>
+              );
+            })}
+          </ul>
+        </Item.Body>
+      </Item>
+    </div>
+  );
 };

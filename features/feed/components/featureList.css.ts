@@ -2,24 +2,24 @@ import { style } from "@vanilla-extract/css";
 import { vars } from "~/app/theme.css";
 
 export const feedList = style({
-	margin: vars.space.large,
+  margin: vars.space.large,
 });
 
 export const siteList = style({
-	marginBottom: vars.space.large,
+  marginBottom: vars.space.large,
 });
 
 export const ul = style({
-	listStyleType: "none",
-	paddingInlineStart: 0,
+  listStyleType: "none",
+  paddingInlineStart: 0,
 });
 
 export const cardElement = style({
-	display: "grid",
-	gridTemplateColumns: "1fr 2rem",
+  display: "grid",
+  gridTemplateColumns: "1fr 2rem",
 });
 
 export const link = style({
-	color: vars.color.text,
-	textDecoration: "none",
+  color: vars.color.text,
+  textDecoration: "none",
 });
