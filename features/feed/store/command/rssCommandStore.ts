@@ -1,4 +1,5 @@
 "use server";
+import { z } from "zod";
 import { prisma } from "~/libs/prisma";
 
 type saveBookmarkProps = {
@@ -87,4 +88,26 @@ export const removeBookmarkFeed = async (
     console.error(e);
     return false;
   }
+};
+
+export const updateSites = async ({
+  urls,
+}: { urls: string[] }): Promise<Site[]> => {
+  const parsedUrls = z.array(z.string().url()).parse(urls);
+
+  return await prisma.$transaction(async (tx) => {
+    await tx.site.deleteMany();
+    const sites = await tx.site.createManyAndReturn({
+      data: [
+        ...parsedUrls.map((url) => ({
+          url,
+        })),
+      ],
+    });
+
+    return sites.map((site) => ({
+      id: site.id,
+      url: site.url,
+    }));
+  });
 };
